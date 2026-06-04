@@ -34,6 +34,18 @@ handful of invariants pre-loaded at the right tier.
 | [`CLAUDE.md`](CLAUDE.md) | Template cold-start doc for AI agents — size-disciplined (~120 lines), fill-in-the-blanks with guidance comments. | First thing an agent reads each session. |
 | [`KIRO.md`](KIRO.md) | Steering doc for the implementer: runtime envelope, task sizing, plan-first gate, implementation discipline, tests, DoD. | Before taking an implementation task. |
 
+### Supporting docs (`docs/`)
+
+| Artifact | What it is | Read it when |
+|----------|------------|--------------|
+| [`docs/tenets/enforcement-ladder.md`](docs/tenets/enforcement-ladder.md) | How a tenet climbs Tier 0 → 1 → 2, with promotion triggers and the UI-gating worked example. | Deciding how hard to enforce a rule. |
+| [`docs/tenets/starter-set.md`](docs/tenets/starter-set.md) | The 24 principles as a compact quick-reference card (principle · tier · promote-when). | You want the cheat sheet, not the full text. |
+| [`docs/templates/decisions-log.md`](docs/templates/decisions-log.md) | Append-only decision log template with examples. | Setting up living docs (TI1); recording a decision. |
+| [`docs/templates/known-issues.md`](docs/templates/known-issues.md) | Structured known-issues index template with examples. | Setting up living docs; logging a known bug. |
+| [`docs/templates/state-machine.md`](docs/templates/state-machine.md) | Model entity states before code; every-edge-a-test rule + example (A4). | Designing any lifecycle-bearing entity. |
+| [`docs/guides/deterministic-testing.md`](docs/guides/deterministic-testing.md) | Fake-before-mock + the P/N/E/C test taxonomy with template tests. | Writing tests; setting up the harness. |
+| [`docs/guides/codebase-hardening.md`](docs/guides/codebase-hardening.md) | The 4-sprint audit framework in dependency order (P5). | Hardening a working-but-rough codebase. |
+
 ---
 
 ## The three enforcement tiers (at a glance)
