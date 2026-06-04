@@ -45,6 +45,14 @@ handful of invariants pre-loaded at the right tier.
 | [`docs/templates/state-machine.md`](docs/templates/state-machine.md) | Model entity states before code; every-edge-a-test rule + example (A4). | Designing any lifecycle-bearing entity. |
 | [`docs/guides/deterministic-testing.md`](docs/guides/deterministic-testing.md) | Fake-before-mock + the P/N/E/C test taxonomy with template tests. | Writing tests; setting up the harness. |
 | [`docs/guides/codebase-hardening.md`](docs/guides/codebase-hardening.md) | The 4-sprint audit framework in dependency order (P5). | Hardening a working-but-rough codebase. |
+| [`docs/guides/collaboration.md`](docs/guides/collaboration.md) | The three-actor model (owner / orchestrator / implementer), intent briefs, fresh-context CR, plan-first gate. | Working as a human+AI team. |
+
+### Scaffolding (drop-in starters)
+
+| Artifact | What it is | Use it when |
+|----------|------------|-------------|
+| [`.github/workflows/ci.yml`](.github/workflows/ci.yml) | Minimal CI pipeline (lint → test → build) — CI from commit #0. | Setting up the repo (Tier-2 backstop). |
+| [`eslint.config.mjs`](eslint.config.mjs) | Starter flat config with an "Architecture Enforcement Rules" section showing where custom tenets-as-lint go. | Setting up linting; promoting a tenet to a rule. |
 
 ---
 

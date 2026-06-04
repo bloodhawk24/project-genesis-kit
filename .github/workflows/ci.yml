@@ -1,0 +1,31 @@
+# CI from commit #0 — never merge without automated verification.
+# This pipeline is the Tier-2 backstop for the Playbook: lint enforces architecture rules
+# (e.g. no-async-gating, A2), tests enforce correctness, build catches what both miss.
+# Set up CI before the first feature, not after the first bug. Adapt the steps to your stack.
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # Customize: set your Node version
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+      # Install
+      - run: npm ci
+      # Lint — catches style AND architecture violations (custom rules)
+      - run: npm run lint
+      # Backend tests
+      - run: npm test
+      # Frontend tests (if applicable)
+      - run: npm run test:frontend
+      # Build (catches compilation/bundling errors)
+      - run: npm run build
